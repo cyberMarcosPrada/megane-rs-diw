@@ -1,0 +1,39 @@
+
+// COLORES
+$black: #080808;
+$dark: #151515;
+$white: #FFFFFF;
+$gray: #777777;
+$light-gray: #E6E6E6;
+$yellow: #FFD500;
+
+// ESPACIADOS
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-48: 48px;
+$spacing-64: 64px;
+$spacing-96: 96px;
+
+// MAPA DE ESPACIADOS
+$spacings: (
+  4: $spacing-4,
+  8: $spacing-8,
+  16: $spacing-16,
+  24: $spacing-24,
+  32: $spacing-32,
+  48: $spacing-48,
+  64: $spacing-64,
+  96: $spacing-96
+);
+
+// RADIOS
+$radius-small: 4px;
+$radius-medium: 8px;
+$radius-large: 16px;
+
+// OPACIDADES
+$opacity-disabled: 0.5;
+$opacity-overlay: 0.7;

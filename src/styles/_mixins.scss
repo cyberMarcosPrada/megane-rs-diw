@@ -1,0 +1,29 @@
+
+@use "sass:map";
+
+// BREAKPOINTS
+$breakpoints: (
+  "mobile": "(max-width: 599px)",
+  "tablet": "(min-width: 600px) and (max-width: 1199px)",
+  "desktop": "(min-width: 1200px)"
+);
+
+// MIXIN PARA MEDIA QUERIES
+@mixin respond-to($breakpoint) {
+  $query: map.get($breakpoints, $breakpoint);
+
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "No existe el breakpoint: #{$breakpoint}";
+  }
+}
+
+// MIXIN PARA CENTRAR ELEMENTOS
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

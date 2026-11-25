@@ -1,0 +1,92 @@
+
+@use "globals" as *;
+
+// CONFIGURACION GENERAL
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: $black;
+  color: $white;
+  margin: 0;
+  padding: 0;
+}
+
+// CONTENEDOR PRINCIPAL
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-16;
+}
+
+// SISTEMA DE GRID
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$spacing-8;
+}
+
+.col {
+  flex: 1;
+  padding: $spacing-8;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  padding: $spacing-8;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  padding: $spacing-8;
+}
+
+// ESPACIADOS REUTILIZABLES
+@each $size, $value in $spacings {
+  .mt-#{$size} {
+    margin-top: $value;
+  }
+
+  .mb-#{$size} {
+    margin-bottom: $value;
+  }
+
+  .p-#{$size} {
+    padding: $value;
+  }
+}
+
+// ADAPTACION RESPONSIVE
+.container {
+  @include respond-to("tablet") {
+    max-width: 800px;
+  }
+
+  @include respond-to("mobile") {
+    max-width: 100%;
+    padding: 0 $spacing-16;
+  }
+}
+
+.row {
+  @include respond-to("mobile") {
+    margin: 0;
+  }
+}
+
+.col-6 {
+  @include respond-to("mobile") {
+    flex: 0 0 100%;
+  }
+}

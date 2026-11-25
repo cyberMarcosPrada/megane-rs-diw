@@ -1,0 +1,289 @@
+
+@use "globals" as *;
+
+// BOTONES
+.btn {
+  display: inline-block;
+  padding: $spacing-8 $spacing-24;
+  border: none;
+  border-radius: $radius-small;
+  background-color: $yellow;
+  color: $black;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    opacity: $opacity-overlay;
+  }
+}
+
+// CABECERA
+.header {
+  background-color: $black;
+  padding: $spacing-16 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    color: $white;
+    font-weight: bold;
+    text-decoration: none;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-32;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+// PRESENTACION PRINCIPAL
+.hero {
+  background-color: $black;
+  padding: $spacing-64 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-32;
+  }
+
+  &__content {
+    flex: 1;
+
+    h1 {
+      color: $white;
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: $gray;
+    }
+  }
+
+  &__subtitle {
+    color: $yellow !important;
+    font-weight: bold;
+  }
+
+  &__image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+// ESPECIFICACIONES
+.specifications {
+  background-color: $light-gray;
+  color: $black;
+  padding: $spacing-24 0;
+  text-align: center;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-32;
+  }
+}
+
+// TARJETAS
+.card {
+  background-color: $dark;
+  color: $white;
+  padding: $spacing-16;
+  border-radius: $radius-small;
+
+  h3 {
+    color: $white;
+    margin-bottom: $spacing-8;
+  }
+
+  p {
+    color: $yellow;
+    font-size: 0.75rem;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border-radius: $radius-small;
+  }
+}
+
+// NACIO UNA LEYENDA
+.legend {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: $spacing-32 0;
+
+  img {
+    width: 55%;
+    margin-top: $spacing-16;
+  }
+}
+
+// VERSIONES
+.versions {
+  background-color: $light-gray;
+  color: $black;
+  text-align: center;
+  padding: $spacing-32 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-32;
+  }
+}
+
+// GALERIA
+.gallery {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: $spacing-32 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-24;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+}
+
+// SECCION FINAL
+.final {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: $spacing-48 0;
+}
+
+// FOOTER
+.footer {
+  background-color: $black;
+  color: $gray;
+  padding: $spacing-24 0;
+  font-size: 0.75rem;
+}
+
+// DISEÑO RESPONSIVE
+
+@include respond-to("tablet") {
+  .hero__content h1 {
+    font-size: 2rem;
+  }
+
+  .hero__container {
+    gap: $spacing-16;
+  }
+}
+
+@include respond-to("mobile") {
+
+  // CABECERA
+  .header {
+    &__container {
+      flex-wrap: wrap;
+      gap: $spacing-8;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    .btn {
+      padding: $spacing-8 $spacing-16;
+      font-size: 0.75rem;
+    }
+  }
+
+  // PRESENTACION
+  .hero {
+    padding: $spacing-32 0;
+
+    &__container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__content {
+      width: 100%;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // ESPECIFICACIONES
+  .specifications__grid {
+    grid-template-columns: 1fr;
+  }
+
+  // VERSIONES
+  .versions__grid {
+    grid-template-columns: 1fr;
+  }
+
+  // GALERIA
+  .gallery__grid {
+    grid-template-columns: 1fr;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+
+  .legend img {
+    width: 100%;
+  }
+}
+
+
